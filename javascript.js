@@ -8,12 +8,14 @@ window.onkeydown = function(event) {
 
 let currentContainer;
 let currentRow;
-let currentBox;
 console.log(currentContainer);
 
 let boxes = 0;
 function getInput() {
-    boxes = prompt("How many boxes?", 0);
+    boxes = prompt("How many boxes? (max: 128)", 0);
+    if (boxes > 128) {
+        return
+    }
     resetGame();
     createContainer();
     for (let i = 0; i < boxes; i++) {
