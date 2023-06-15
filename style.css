@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+}
+
+.box {
+    background-color: lightcoral;
+    width: 100px;
+    height: 100px;
+    margin: 4px;
+}
