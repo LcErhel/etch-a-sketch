@@ -11,22 +11,17 @@ let currentRow;
 let currentBox;
 let total = 0;
 
-function getElementOnHover() {
-    let currentId = "";
-    let currentElement;
-    document.onmouseover = function(e) {
-        currentId = e.target.id;
-        currentElement = document.getElementById(currentId);
-        console.log(currentElement);
-        if (currentElement.classList.contains("box")) {
-            currentElement.classList.add("hovered");
-        }
-        console.log(currentId);
-    }
-    console.log(currentId);
-}
+document.onmouseover = function(e) {
+    let currentElement = document.getElementById(e.target.id);
 
-getElementOnHover();
+    if (currentElement === null) {
+        return;
+    }
+
+    if (currentElement.classList.contains("box")) {
+        currentElement.classList.add("hovered");
+    }
+}
 
 let boxes = 0;
 function getInput() {
@@ -81,4 +76,5 @@ function createBox(idNum) {
 
 function resetGame() {
     document.body.innerHTML = "";
+    total = 0;
 }
