@@ -8,7 +8,25 @@ window.onkeydown = function(event) {
 
 let currentContainer;
 let currentRow;
-console.log(currentContainer);
+let currentBox;
+let total = 0;
+
+function getElementOnHover() {
+    let currentId = "";
+    let currentElement;
+    document.onmouseover = function(e) {
+        currentId = e.target.id;
+        currentElement = document.getElementById(currentId);
+        console.log(currentElement);
+        if (currentElement.classList.contains("box")) {
+            currentElement.classList.add("hovered");
+        }
+        console.log(currentId);
+    }
+    console.log(currentId);
+}
+
+getElementOnHover();
 
 let boxes = 0;
 function getInput() {
@@ -21,12 +39,10 @@ function getInput() {
     for (let i = 0; i < boxes; i++) {
         createRow(i);
         for (let j = 0; j < boxes; j++) {
-            createBox();
+            createBox(total);
+            total++
         }
     }
-    console.log(currentContainer);
- 
-    console.log(boxes);
 }
 
 const container = document.querySelector(".container");
@@ -53,13 +69,14 @@ function createRow(idNum) {
     newRow.id = `row${idNum}`;
     currentContainer.appendChild(newRow);
     currentRow = document.querySelector(`#row${idNum}`);
-    console.log(currentRow);
 }
 
-function createBox() {
+function createBox(idNum) {
     const newBox = document.createElement("div");
     newBox.classList.add("box");
+    newBox.id = `box${idNum}`;
     currentRow.appendChild(newBox);
+    currentBox = newBox;
 }
 
 function resetGame() {

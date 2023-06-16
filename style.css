@@ -3,6 +3,8 @@
     flex-direction: column;
     width: 900px;
     height: 900px;
+    padding: auto;
+    margin: auto;
 }
 
 .row {
@@ -13,5 +15,13 @@
 .box {
     flex: 1;
     background-color: lightcoral;
-    margin: 1px;
+    margin: 0.5px;
+}
+
+.hovered {
+    background-color: black;
+}
+
+.box:hover {
+    background-color: yellowgreen;
 }
