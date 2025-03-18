@@ -20,5 +20,8 @@ function createGrid() {
             row.appendChild(square);
         }
     }
-
+    let gridSquares = document.querySelectorAll(".square");
+    gridSquares.forEach(gridSquare => gridSquare.addEventListener("mouseover", () => {
+        gridSquare.style.backgroundColor = "burlywood";
+    }));
 }
