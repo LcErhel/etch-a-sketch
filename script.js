@@ -1,8 +1,10 @@
 "use strict";
 
+let container = document.querySelector(".container");
+
 function createGrid() {
+    reset();
     let amount = prompt("amount of squares? ", 16);
-    let container = document.querySelector(".container");
     // let square = document.createElement("div").classList.add("square");
     // container.appendChild(square);
 
@@ -24,4 +26,8 @@ function createGrid() {
     gridSquares.forEach(gridSquare => gridSquare.addEventListener("mouseover", () => {
         gridSquare.style.backgroundColor = "burlywood";
     }));
+}
+
+function reset() {
+    container.replaceChildren();
 }
