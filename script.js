@@ -29,3 +29,9 @@ function createGrid() {
 function reset() {
     container.replaceChildren();
 }
+
+document.addEventListener("keypress", (event) => {
+    if (event.key == "r") {
+        createGrid();
+    }
+});
