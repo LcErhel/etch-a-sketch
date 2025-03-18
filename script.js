@@ -5,8 +5,6 @@ let container = document.querySelector(".container");
 function createGrid() {
     reset();
     let amount = prompt("amount of squares? ", 16);
-    // let square = document.createElement("div").classList.add("square");
-    // container.appendChild(square);
 
     outer:
     for(let i = 0; i < amount; i++) {
